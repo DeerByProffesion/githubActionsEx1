@@ -1,0 +1,10 @@
+name: Get Issue Event details
+on: 
+  issues:
+    types: [opened]
+jobs:
+  getEvent:
+    runs-on: getEvent
+    steps:
+      - name: Output GitHub event details
+        run: evho "${{ toJSON(github.event) }}"

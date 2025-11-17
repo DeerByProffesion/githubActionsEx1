@@ -1,0 +1,46 @@
+name: Lint, Test and Deploy
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get current Code
+        uses: actions/checkout@v5
+      - name: Install NodeJS
+        uses: actions/setup-node@v6
+        with:
+          node-cersion: 24
+      - name: Install NodeJS dependencies
+        run: npm ci
+      - name: Run lints
+        run: npm lint
+  test:
+    needs: [lint]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get current Code
+        uses: actions/checkout@v5
+      - name: Install NodeJS
+        uses: actions/setup-node@v6
+        with:
+          node-cersion: 24
+      - name: Install NodeJS dependencies
+        run: npm ci
+      - name: Run test
+        run: npm test
+  deploy:
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get current Code
+        uses: actions/checkout@v5
+      - name: Install NodeJS
+        uses: actions/setup-node@v6
+        with:
+          node-cersion: 24
+      - name: Install NodeJS dependencies
+        run: npm ci
+      - name: Run deploy
+        run: npm deploy
+
+
