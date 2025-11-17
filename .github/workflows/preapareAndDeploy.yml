@@ -40,7 +40,7 @@ jobs:
           node-cersion: 24
       - name: Install NodeJS dependencies
         run: npm ci
-      - name: Run deploy
-        run: npm run deploy
+      - name: Run Build
+        run: npm run build
 
 
