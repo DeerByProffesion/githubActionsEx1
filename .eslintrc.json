@@ -1,0 +1,21 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "vitest/globals": true
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "vitest"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:vitest/recommended"
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off"
+  }
+}
