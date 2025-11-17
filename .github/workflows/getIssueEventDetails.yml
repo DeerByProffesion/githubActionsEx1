@@ -1,7 +1,7 @@
 name: Get Issue Event details
 on: 
   issues:
-    types: [opened]
+    types: opened
 jobs:
   getEvent:
     runs-on: ubuntu-latest
