@@ -4,7 +4,7 @@ on:
     types: [opened]
 jobs:
   getEvent:
-    runs-on: getEvent
+    runs-on: ubuntu-latest
     steps:
       - name: Output GitHub event details
-        run: evho "${{ toJSON(github.event) }}"
+        run: echo "${{ toJSON(github.event) }}"
